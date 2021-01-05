@@ -91,7 +91,7 @@ function runScorer(terms, docs) {
 
     const $prepped = $current
         .map((el, i) => scorable(terms, el, i))
-        .tee(({ text }, i) => docs.push(text));
+        .forEach(({ text }, i) => docs.push(text));
 
     $Postings = Postings($prepped);
 
