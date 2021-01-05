@@ -2,7 +2,7 @@ import IndexTrie from './index-trie';
 import PubSub from './pub-sub';
 import { tokenize } from './tokenizer';
 import { termFrequency } from './tf-idf';
-import { runtime } from './utils';
+import { runtime, enumerate } from './utils';
 
 function selectClass(el, className) {
     return el.getElementsByClassName(className);

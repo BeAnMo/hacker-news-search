@@ -9,7 +9,7 @@
         return result;
     }
 
-    function* enumerate$1(iter) {
+    function* enumerate(iter) {
         let i = 0;
 
         for (const item of iter) {
@@ -43,7 +43,7 @@
             const L = word.length;
             const eow = L - 1;
 
-            for (const [i, ch] of enumerate$1(word)) {
+            for (const [i, ch] of enumerate(word)) {
                 if (cursor[ch]) {
                     if (i === eow && cursor[ch].$) {
                         cursor[ch].$.push(setter(word, ch, i));
