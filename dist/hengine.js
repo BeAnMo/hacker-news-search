@@ -414,7 +414,7 @@
 
         let trie = new IndexTrie();
 
-        runtime('[build trie]', () => {
+        const initialize = () => {
             for (const [i, tokens] of enumerate(docsTokens)) {
                 for (const token of termFrequency(tokens)) {
                     const { term, termFrequency } = token;
@@ -422,7 +422,9 @@
                     trie.set(term, () => ({ _id: i, termFrequency }));
                 }
             }
-        });
+        };
+
+        runtime('[build trie]', initialize);
 
         return {
             totalDocs,
