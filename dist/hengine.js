@@ -358,8 +358,9 @@
         const $current = Array.from(selectClass($commTree, 'athing'));
 
         const $prepped = $current
-            .map((el, i) => scorable(terms, el, i))
-            .forEach(({ text }, i) => docs.push(text));
+            .map((el, i) => scorable(terms, el, i));
+
+        $prepped.forEach(({ text }, i) => docs.push(text));
 
         $Postings = Postings($prepped);
 
