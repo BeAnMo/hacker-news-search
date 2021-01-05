@@ -84,7 +84,7 @@ function bulkAppend(el, items) {
     return el;
 }
 
-$Postings = null;
+let $Postings = null;
 function runScorer(terms, docs) {
     const $commTree = first(selectClass(document, 'comment-tree'));
     const $current = Array.from(selectClass($commTree, 'athing'));
@@ -195,12 +195,12 @@ function tokenizeWords(str) {
         .filter(({ type }) => type === 'word');
 }
 
-var DOCS = [];
+let DOCS = [];
 runScorer([], DOCS);
-ENGINE = null;
+let ENGINE = null;
 runtime('[init engine]', () => (ENGINE = engine(DOCS)));
 
-searchListener = PubSub();
+let searchListener = PubSub();
 
 function SearchBar() {
     const wrapper = document.createElement('tr');
@@ -248,7 +248,7 @@ function SearchResults() {
     return wrapper;
 }
 
-var SEARCH = document.querySelector('.fatitem tbody');
+let SEARCH = document.querySelector('.fatitem tbody');
 
 
 SEARCH.appendChild(SearchBar());
