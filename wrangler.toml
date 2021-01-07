@@ -5,10 +5,6 @@ workers_dev = true
 route = ""
 zone_id = ""
 
-kv_namespaces = [  
-    { binding = "hacker_news_search_data", id = "d45d621d2aa94b7b9a67220a22c449c5", preview_id = "d45d621d2aa94b7b9a67220a22c449c5" }
-]
-
 [site]
 bucket = "./build"
 entry-point = "workers-site"

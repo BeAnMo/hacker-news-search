@@ -1,7 +1,5 @@
 import { getAssetFromKV, mapRequestToAsset } from '@cloudflare/kv-asset-handler';
 
-import { getLatest } from './scraper';
-
 /**
  * The DEBUG flag will do two things that help during development:
  * 1. we will skip caching on the edge, which makes it easier to
@@ -10,10 +8,6 @@ import { getLatest } from './scraper';
  *    than the default 404.html page.
  */
 const DEBUG = false;
-
-addEventListener('scheduled', event => {
-    event.waitUntil(getLatest(event));
-});
 
 addEventListener('fetch', event => {
     try {
