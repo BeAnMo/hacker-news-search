@@ -45,7 +45,6 @@ export async function getLatest(event) {
         .then(loadPage)
         .then(getComments);
 
-
     await hacker_news_search_data.put('page0', comments);
 
     return comments;
